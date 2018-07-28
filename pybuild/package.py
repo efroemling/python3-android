@@ -34,7 +34,7 @@ class Package:
     source: Optional[Source] = None
     patches: List[Patch] = []
     dependencies: List[str] = []
-    skip_uploading: bool = False
+    skip_uploading: bool = True
 
     def __init__(self):
         self.name = type(self).__name__.lower()
