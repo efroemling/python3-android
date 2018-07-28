@@ -121,6 +121,7 @@ class Package:
                 f'-L{self.SYSROOT}/usr/lib',
                 '--sysroot=' + str(ARCH_SYSROOT),
                 '-pie',
+                '-fuse-ld=lld',
             ],
 
             # pkg-config settings
