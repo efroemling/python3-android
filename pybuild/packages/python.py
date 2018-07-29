@@ -12,6 +12,7 @@ class Python(Package):
         RemotePatch('https://bugs.python.org/file46517/gdbm.patch'),
         LocalPatch('cppflags'),
         LocalPatch('skip-build'),
+        LocalPatch('lld-compatibility'),
     ]
 
     dependencies = list(env.packages)
