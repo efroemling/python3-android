@@ -1,0 +1,11 @@
+--- openssl-1.1.1-pre8/Configurations/15-android.conf.orig	2018-07-29 15:38:59.958988317 +0800
++++ openssl-1.1.1-pre8/Configurations/15-android.conf	2018-07-29 15:39:13.458988323 +0800
+@@ -131,7 +131,7 @@
+         cppflags         => add(sub { android_ndk()->{cppflags} }),
+         cxxflags         => add(sub { android_ndk()->{cflags} }),
+         bn_ops           => sub { android_ndk()->{bn_ops} },
+-        bin_cflags       => "-pie",
++        bin_cflags       => "-pie -fuse-ld=lld",
+         enable           => [ ],
+     },
+     "android-arm" => {

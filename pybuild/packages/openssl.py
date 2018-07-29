@@ -4,6 +4,7 @@ import os
 
 from .. import env
 from ..package import Package
+from ..patch import LocalPatch
 from ..source import URLSource
 from ..util import target_arch
 
@@ -16,6 +17,9 @@ class OpenSSL(Package):
     validpgpkeys = [
         '8657ABB260F056B1E5190839D9C4D26D0E604491',  # Matt Caswell
         '7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C',  # Richard Levitte
+    ]
+    patches = [
+        LocalPatch('use-lld'),
     ]
 
     def init_build_env(self) -> bool:
